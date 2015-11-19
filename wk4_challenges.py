@@ -35,6 +35,21 @@ def is_palindrome(word):
 			return False;
 	return True;
 
+# Fibonacci from 0 to num
+def Fibonacci(num):
+	nums = []
+	prev = 0
+	current = 1
+	buff = 0
+	nums.append(prev)
+	while current < num:
+		buff = current
+		current = current + prev
+		prev = buff
+		if current < num:
+			nums.append(current)
+	return nums;
+
 
 
 
@@ -55,3 +70,14 @@ if is_palindrome('racecar'):
 
 if is_palindrome('cow'):
 	print("'cow' is a palindrome")
+
+nums = Fibonacci(50)
+print ("Fibonacci from 0 to 50: ", end=" ")
+for x in nums:
+	print("%i" % x, end=" ")
+
+
+tri = pascalTriangle(5)
+print ("Pascal triangle:")
+for x in tri:
+	print(x)
